@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects — Alex Biondi</title>
+  <meta name="description" content="Project categories and current build direction for Alex Biondi.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/design-system.css?v=20260512m">
+  <link rel="stylesheet" href="css/environment.css?v=20260512n">
+  <link rel="stylesheet" href="css/layout.css?v=20260512m">
+  <link rel="stylesheet" href="css/components.css?v=20260512m">
+  <style>
+    .projects-page {
+      padding-top: calc(var(--space-32) + var(--space-10));
+      padding-bottom: var(--space-20);
+    }
+    .projects-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .projects-intro {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-8);
+      max-width: none;
+    }
+    .project-buttons {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      grid-auto-rows: 1fr;
+      gap: var(--space-4);
+    }
+    .project-button {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.02);
+      text-align: center;
+      font-family: var(--font-mono);
+      letter-spacing: var(--tracking-wide);
+      text-transform: none;
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+      aspect-ratio: 1 / 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: var(--space-3);
+      overflow: hidden;
+    }
+    .project-button__title {
+      font-size: var(--text-3xl);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      color: var(--accent-green);
+      text-align: center;
+      line-height: 1.05;
+      margin-bottom: var(--space-4);
+    }
+    .project-button__sub {
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+      color: var(--text-secondary);
+      text-transform: none;
+      letter-spacing: normal;
+      text-align: center;
+      width: 100%;
+      overflow-wrap: anywhere;
+    }
+    .project-button:hover {
+      border-color: var(--accent-green);
+      background: rgba(74, 222, 128, 0.08);
+      box-shadow: 0 0 18px rgba(74, 222, 128, 0.45);
+    }
+    @media (min-width: 768px) {
+      .project-buttons {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+    .page-switch {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--space-10);
+    }
+    .page-switch__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      color: var(--text-primary);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
+    }
+    .page-switch__link:hover,
+    .page-switch__link:focus-visible {
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+      box-shadow: 0 0 18px rgba(74, 222, 128, 0.45);
+    }
+  </style>
+</head>
+<body>
+  <div class="env-grid" aria-hidden="true"></div>
+  <div class="env-noise" aria-hidden="true">
+    <svg width="100%" height="100%">
+      <filter id="noise-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noise-filter)"/>
+    </svg>
+  </div>
+  <div class="env-ambient" aria-hidden="true">
+    <div class="env-ambient__orb env-ambient__orb--1"></div>
+    <div class="env-ambient__orb env-ambient__orb--2"></div>
+    <div class="env-ambient__orb env-ambient__orb--3"></div>
+  </div>
+  <div class="env-cursor" id="cursor-gradient" aria-hidden="true"></div>
+  <div class="env-vignette" aria-hidden="true"></div>
+
+  <nav class="nav nav--scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html#hero" class="nav__logo"><span>//</span> Alex Biondi</a>
+      <div class="nav__links">
+        <a href="index.html#about" class="nav__link">About</a>
+        <a href="projects.html" class="nav__link nav__link--active">Projects</a>
+        <a href="index.html#growth" class="nav__link">Growth</a>
+        <a href="index.html#log" class="nav__link">Experience</a>
+        <a href="vision.html" class="nav__link">Vision</a>
+        <a href="index.html#contact" class="nav__link">Contact</a>
+      </div>
+      <button class="nav__menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html#about">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#growth">Growth</a>
+      <a href="index.html#log">Experience</a>
+      <a href="vision.html">Vision</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="projects-page">
+    <div class="container projects-wrap">
+      <section>
+        <div class="section__header reveal">
+          <div class="section__label">Projects</div>
+          <h1 class="section__title">What I’m doing with my projects.</h1>
+        </div>
+
+        <p class="projects-intro reveal">
+          I’m getting experience with regular tech, robotics, health, math and health-tech. I’m organizing each project into one of these buttons so each build has a clear category and learning objective. This structure keeps my work focused and tied to my long-term direction.
+        </p>
+
+        <div class="project-buttons reveal">
+          <button class="project-button" type="button">
+            <span class="project-button__title">Software</span>
+            <span class="project-button__sub">Software projects let me apply core engineering skills in a practical way. These skills support my long-term vision of building wearable systems that are trustworthy and usable in real care decisions.</span>
+          </button>
+          <button class="project-button" type="button">
+            <span class="project-button__title">Robotics</span>
+            <span class="project-button__sub">Robotics helps me think beyond software and into physical systems with real-world constraints. This supports my vision because wearable health-tech depends on reliable device behavior before analytics can be useful.</span>
+          </button>
+          <button class="project-button" type="button">
+            <span class="project-button__title">Health</span>
+            <span class="project-button__sub">Health-focused projects keep my technical work connected to real patient needs. This moves me toward systems that help people act earlier and understand risk before problems escalate.</span>
+          </button>
+          <button class="project-button" type="button">
+            <span class="project-button__title">Math</span>
+            <span class="project-button__sub">Math projects strengthen the decision layer behind health-tech systems. These are essential for my vision because better clinical context depends on reasoning quality, not just interface design.</span>
+          </button>
+          <button class="project-button" type="button">
+            <span class="project-button__title">Health-Tech</span>
+            <span class="project-button__sub">Health-tech projects combine software, data and health science into one applied workflow. This is the most direct path toward my goal of wearable systems that make health data accessible, understandable and useful.</span>
+          </button>
+        </div>
+        <div class="page-switch reveal">
+          <a class="page-switch__link" href="courses.html">Go To Courses & Certifications →</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/animations.js?v=20260512h"></script>
+  <script src="js/interactions.js?v=20260512i"></script>
+</body>
+</html>

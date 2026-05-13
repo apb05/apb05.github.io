@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vision — Alex Biondi</title>
+  <meta name="description" content="Career vision and inspiration page for Alex Biondi, focused on health-tech, privacy-first systems and patient-controlled data.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/design-system.css?v=20260512f">
+  <link rel="stylesheet" href="css/environment.css?v=20260512n">
+  <link rel="stylesheet" href="css/layout.css?v=20260512f">
+  <link rel="stylesheet" href="css/components.css?v=20260512m">
+  <style>
+    .vision-page {
+      padding-top: calc(var(--space-32) + var(--space-10));
+      padding-bottom: var(--space-20);
+    }
+    .vision-profile {
+      width: 148px;
+      height: 148px;
+      margin: 0 auto var(--space-8);
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(
+        135deg,
+        rgba(74, 222, 128, 0.9),
+        rgba(22, 163, 74, 0.55)
+      );
+      box-shadow: 0 20px 50px -24px rgba(74, 222, 128, 0.55);
+    }
+    .vision-profile img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .vision-doc {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 0;
+    }
+    .vision-doc h1,
+    .vision-doc h2,
+    .vision-doc h3 {
+      margin-bottom: var(--space-4);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      color: var(--accent-green);
+    }
+    .vision-doc h1 { font-size: clamp(1.6rem, 2.2vw, 2.4rem); }
+    .vision-doc h2 { font-size: clamp(1.15rem, 1.55vw, 1.6rem); }
+    .vision-doc h3 { font-size: clamp(1rem, 1.35vw, 1.25rem); }
+    .vision-doc p,
+    .vision-doc li {
+      color: var(--text-secondary);
+      line-height: var(--leading-relaxed);
+    }
+    .vision-doc p {
+      max-width: none;
+    }
+    .vision-doc p,
+    .vision-doc ul,
+    .vision-doc ol {
+      margin-bottom: var(--space-5);
+    }
+    .vision-doc p + h2,
+    .vision-doc ul + h2,
+    .vision-doc ol + h2,
+    .vision-doc p + h3,
+    .vision-doc ul + h3,
+    .vision-doc ol + h3 {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: var(--space-4);
+      margin-top: var(--space-7);
+    }
+    .vision-doc ul {
+      list-style: disc;
+      padding-left: 1.25rem;
+    }
+    .vision-doc .sources-list li {
+      margin-bottom: var(--space-4);
+      line-height: var(--leading-normal);
+    }
+    .vision-doc .sources-list li:last-child {
+      margin-bottom: 0;
+    }
+    .vision-doc ul.sources-list li a {
+      color: var(--text-secondary) !important;
+      transition: color var(--transition-fast), text-shadow var(--transition-fast) !important;
+    }
+    .vision-doc ul.sources-list li a:hover,
+    .vision-doc ul.sources-list li a:focus-visible {
+      color: var(--accent-green) !important;
+      text-decoration: underline !important;
+      text-underline-offset: 2px;
+      text-shadow: 0 0 12px rgba(74, 222, 128, 0.8) !important;
+    }
+    .vision-doc hr {
+      border: 0;
+      height: 1px;
+      background: var(--border);
+      margin: var(--space-8) 0;
+    }
+    .vision-doc .lead {
+      color: var(--accent-green);
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-widest);
+      font-size: var(--text-xs);
+    }
+  </style>
+</head>
+<body>
+  <div class="env-grid" aria-hidden="true"></div>
+  <div class="env-noise" aria-hidden="true">
+    <svg width="100%" height="100%">
+      <filter id="noise-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noise-filter)"/>
+    </svg>
+  </div>
+  <div class="env-ambient" aria-hidden="true">
+    <div class="env-ambient__orb env-ambient__orb--1"></div>
+    <div class="env-ambient__orb env-ambient__orb--2"></div>
+    <div class="env-ambient__orb env-ambient__orb--3"></div>
+  </div>
+  <div class="env-cursor" id="cursor-gradient" aria-hidden="true"></div>
+  <div class="env-vignette" aria-hidden="true"></div>
+
+  <nav class="nav nav--scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html#hero" class="nav__logo"><span>//</span> Alex Biondi</a>
+      <div class="nav__links">
+        <a href="index.html#about" class="nav__link">About</a>
+        <a href="index.html#projects" class="nav__link">Projects</a>
+        <a href="index.html#growth" class="nav__link">Growth</a>
+        <a href="index.html#log" class="nav__link">Log</a>
+        <a href="vision.html" class="nav__link nav__link--active">Vision</a>
+        <a href="index.html#contact" class="nav__link">Contact</a>
+      </div>
+      <button class="nav__menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html#about">About</a>
+      <a href="index.html#projects">Projects</a>
+      <a href="index.html#growth">Growth</a>
+      <a href="index.html#log">Log</a>
+      <a href="vision.html">Vision</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="vision-page">
+    <div class="container">
+      <div class="vision-profile">
+        <img src="compressed_F990B7DC-1F64-4A20-A199-9FB4F2C249DD-preview.jpg" alt="Portrait of Alex Biondi">
+      </div>
+      <article class="vision-doc">
+        <p class="lead">My Vision:</p>
+        <hr>
+        <h1>Why I’m Building Toward Health-Tech</h1>
+        <p>My interest in health-tech comes from a simple frustration: health care holds some of the most important data in a person’s life, but that data is often scattered, hard to access and difficult to move.</p>
+        <p>Canada’s health-care system is under pressure. Patients wait too long. Emergency departments are overcrowded. Providers are overloaded. Records do not move easily between clinics, hospitals and specialists.</p>
+        <p>I do not believe technology can replace doctors, nurses or real health-care infrastructure. But I do believe better systems can reduce friction, help patients understand their health and give providers better context before care begins.</p>
+        <p>That is the direction I want to build toward: privacy-first health technology that gives patients more control over their data and helps them make better decisions before they are forced into an overloaded emergency department.</p>
+        <hr>
+        <h2>The Problem I Care About</h2>
+        <p>Canada’s health-care system is not only struggling because of money or staffing. Those problems matter, but they are not the whole story. A major issue is flow.</p>
+        <p>Patients move through the system slowly. Records do not always follow them. Intake is repeated. Emergency departments become the default option when people cannot get timely care somewhere else.</p>
+        <p>This problem is getting harder as Canada’s population ages.</p>
+        <p>Statistics Canada reported that 8.1 million people in Canada were 65 or older in 2025. Its long-term projections show that the share of people 65 and older could rise from 19.5 per cent in 2025 to between 22.6 per cent and 32.5 per cent by 2075, depending on the scenario (Statistics Canada, 2026).</p>
+        <p>At the same time, emergency departments are getting busier. The Canadian Institute for Health Information reported that unscheduled emergency department visits reached 16.1 million in 2024-25, a new high (CIHI, 2025).</p>
+        <p>This matters because older populations often need more complex care. More people are living with chronic conditions. More people need help from hospitals, specialists, family doctors, home care and community care. But the system was not built for this level of demand.</p>
+        <hr>
+        <h2>Why Emergency Departments Become the Default</h2>
+        <p>Many people go to the emergency department because they do not have a better option.</p>
+        <p>CIHI reported that the share of Canadian adults with a regular primary care provider fell from 93 per cent in 2016 to 86 per cent in 2023. That left about four million adults without a regular provider (CIHI, 2024).</p>
+        <p>CIHI also reported that about eight per cent of older Canadians, nearly 600,000 people, did not have a regular primary care provider in a 2025 survey. That was the highest rate among the 10 countries surveyed (CIHI, 2025).</p>
+        <p>When someone feels sick, scared or unsure, they want to make sure they are OK. If they cannot quickly reach a family doctor, nurse practitioner or clinic, the emergency department becomes the place they trust most.</p>
+        <p>The problem is that everyone ends up in the same physical space. Some cases need emergency care right away. Others may be better suited for urgent care, virtual care, primary care or followup monitoring.</p>
+        <p>A better system would help people understand that difference earlier.</p>
+        <hr>
+        <h2>What Crowding Does to Patients</h2>
+        <p>Canada does not appear to publish one clean national public dataset that counts how many people die specifically inside emergency waiting rooms each year. That means I do not want to make an unsourced claim.</p>
+        <p>But the evidence does show that emergency department crowding, long waits and patients leaving without being seen are linked to higher risk.</p>
+        <p>A large Ontario study summarized by ICES found that patients who arrived during emergency department shifts with longer waits had higher short-term odds of death and hospital admission (ICES, 2021).</p>
+        <p>Ontario’s Auditor General also found serious wait problems in 2022-23, including longer average waits and a high share of people leaving without being seen (Office of the Auditor General of Ontario, 2023).</p>
+        <p>In 2024, ICES reported higher short-term risk for Ontario adults who left emergency departments without being seen during the pandemic-era rise in departures (ICES, 2024).</p>
+        <p>This does not mean every person who leaves is critically ill. It means the system cannot safely assume that someone who walks out is fine.</p>
+        <hr>
+        <h2>What I Think Is Broken</h2>
+        <p>I think one of the biggest problems is that Canadian health care still depends on patients and providers repeating information that should already be connected.</p>
+        <ul>
+          <li>a hospital portal</li>
+          <li>a family doctor’s system</li>
+          <li>a walk-in clinic</li>
+          <li>a specialist office</li>
+          <li>a pharmacy</li>
+          <li>a lab portal</li>
+          <li>a wearable app</li>
+          <li>an imaging clinic</li>
+        </ul>
+        <p>That is not true patient control. The data exists, but it is often trapped in separate places.</p>
+        <p>CIHI reported strong public interest in access, but much lower real access and limited electronic sharing between providers (CIHI, 2024; CIHI, 2025).</p>
+        <p>This is not only a technology issue. It is also a trust issue. Privacy concerns are real, and recent Canadian cases show why strong safeguards matter.</p>
+        <hr>
+        <h2>Where Technology Can Help</h2>
+        <p>I do not think every health-care problem should become an app. Some things need doctors. Some things need hospitals.</p>
+        <p>But a lot of early process can begin before someone enters the hospital, including symptom intake, medication history, allergies, risk flags, navigation and followup instructions.</p>
+        <p>Ontario already has examples through Health811, virtual urgent care programs and hospital models like virtual home waiting rooms (Ontario Health, 2025; Sault Area Hospital, 2025).</p>
+        <p>This does not replace emergency care. It asks a better question: does every patient need to physically sit in the emergency waiting room for the system to begin helping them?</p>
+        <hr>
+        <h2>Why AI Must Be Used Carefully</h2>
+        <p>AI could help health care, but only if it is used with limits. It should support structure, not replace clinical responsibility.</p>
+        <p>Ontario evidence on virtual urgent care is mixed, and symptom-checker performance varies. That means serious or uncertain cases still need clinical oversight.</p>
+        <p>AI can help collect information, organize records, flag risk and support care navigation.</p>
+        <hr>
+        <h2>Wearables Can Move Care Earlier</h2>
+        <p>Wearables are another reason I am interested in health-tech. They can collect signals outside the hospital, show trends and help patients and providers act earlier.</p>
+        <p>Recent reviews found reduced hospital service use in many device-based monitoring studies and improved outcomes in specific conditions like heart failure.</p>
+        <p>Patient access to records also supports stronger engagement and better self-management.</p>
+        <hr>
+        <h2>Why Privacy Has To Come First</h2>
+        <p>Wearables and AI also create real privacy and cybersecurity risks. Health data should not be treated like normal app data.</p>
+        <p>The future of health-tech has to be private by design.</p>
+        <hr>
+        <h2>My Vision: A Local-First Health Data Ecosystem</h2>
+        <p>My long-term vision is a local-first, patient-controlled health data ecosystem with secure, portable records and patient-managed access.</p>
+        <p>Patients would control when, how and why data is shared. Access could be limited by time, provider, data type, purpose and emergency status.</p>
+        <p>Hospitals would still keep institutional records, but patients would also carry a portable source of truth.</p>
+        <hr>
+        <h2>The AI Layer Should Stay Local</h2>
+        <p>In this vision, AI should run locally when possible. The goal is not diagnosis without a doctor. The goal is better direction with stronger privacy.</p>
+        <p>Standards and policy direction already exist, including FHIR-aligned interoperability efforts and recent Canadian connected-care legislation.</p>
+        <hr>
+        <h2>Why This Could Matter Beyond Canada</h2>
+        <p>This idea could also matter in regions with limited hospital infrastructure, poor internet access or disconnected clinics.</p>
+        <p>A local-first, patient-held model could support safer continuity of care, including offline-first workflows and sync when available.</p>
+        <p>It still requires affordable devices, reliable power, clear governance, local language support and clinician oversight.</p>
+        <hr>
+        <h2>What This System Would Not Solve</h2>
+        <p>This idea would not fix every health-care problem. It would not replace public investment, staffing, hospitals or emergency services.</p>
+        <p>It also needs strong answers for encryption, key recovery, emergency access, consent, AI safety, interoperability and legal accountability.</p>
+        <hr>
+        <h2>The Direction I Want My Career To Move In</h2>
+        <p>I am still early in this field, but this is the problem that pulls me toward health-tech.</p>
+        <p>I want to build systems that give patients more control, help providers make faster decisions and protect sensitive data by design.</p>
+        <p>The long-term goal is simple: give patients more control, give providers better context, reduce repeated intake, protect private data and help people get direction earlier.</p>
+        <hr>
+        <h2>Sources</h2>
+        <ul class="sources-list">
+          <li>Canadian Centre for Cyber Security. Cyber security for connected medical devices. <a href="https://www.cyber.gc.ca/en/guidance/cyber-security-connected-medical-devices-itsap00132" target="_blank" rel="noopener noreferrer">https://www.cyber.gc.ca/en/guidance/cyber-security-connected-medical-devices-itsap00132</a>.</li>
+          <li>Canada Health Infoway. Shared pan-Canadian interoperability roadmap. <a href="https://www.infoway-inforoute.ca/en/component/edocman/resources/interoperability/6444-connecting-you-to-modern-health-care-shared-pan-canadian-interoperability-roadmap" target="_blank" rel="noopener noreferrer">https://www.infoway-inforoute.ca/en/component/edocman/resources/interoperability/6444-connecting-you-to-modern-health-care-shared-pan-canadian-interoperability-roadmap</a>.</li>
+          <li>Canadian Institute for Health Information. Strengthening Canada’s health-care systems with data-driven insights. <a href="https://www.cihi.ca/en/taking-the-pulse-measuring-shared-priorities-for-canadian-health-care-2024/strengthening-canadas-health-care-systems-with-data-driven-insights" target="_blank" rel="noopener noreferrer">https://www.cihi.ca/en/taking-the-pulse-measuring-shared-priorities-for-canadian-health-care-2024/strengthening-canadas-health-care-systems-with-data-driven-insights</a>.</li>
+          <li>Canadian Institute for Health Information. Canadians who have electronic access to core components of their health records. <a href="https://www.cihi.ca/en/indicators/canadians-who-have-electronic-access-to-core-components-of-their-health-records" target="_blank" rel="noopener noreferrer">https://www.cihi.ca/en/indicators/canadians-who-have-electronic-access-to-core-components-of-their-health-records</a>.</li>
+          <li>Canadian Institute for Health Information. Primary and virtual care access: emergency department visits for primary care conditions. <a href="https://www.cihi.ca/en/primary-and-virtual-care-access-emergency-department-visits-for-primary-care-conditions" target="_blank" rel="noopener noreferrer">https://www.cihi.ca/en/primary-and-virtual-care-access-emergency-department-visits-for-primary-care-conditions</a>.</li>
+          <li>Health Canada. The Government of Canada introduces legislation to build a more connected health-care system. <a href="https://www.canada.ca/en/health-canada/news/2026/02/the-government-of-canada-introduces-legislation-to-build-a-more-connected-health-care-system.html" target="_blank" rel="noopener noreferrer">https://www.canada.ca/en/health-canada/news/2026/02/the-government-of-canada-introduces-legislation-to-build-a-more-connected-health-care-system.html</a>.</li>
+          <li>Health Canada. Pre-market guidance for machine-learning-enabled medical devices. <a href="https://www.canada.ca/content/dam/hc-sc/documents/services/drugs-health-products/medical-devices/application-information/guidance-documents/pre-market-guidance-machine-learning-enabled-medical-devices/pre-market-guidance-machine-learning-enabled-medical-devices.pdf" target="_blank" rel="noopener noreferrer">https://www.canada.ca/content/dam/hc-sc/documents/services/drugs-health-products/medical-devices/application-information/guidance-documents/pre-market-guidance-machine-learning-enabled-medical-devices/pre-market-guidance-machine-learning-enabled-medical-devices.pdf</a>.</li>
+          <li>Office of the Auditor General of Ontario. Emergency departments audit. <a href="https://www.auditor.on.ca/en/content/annualreports/arreports/en23/AR_emergencydepts_en23.pdf" target="_blank" rel="noopener noreferrer">https://www.auditor.on.ca/en/content/annualreports/arreports/en23/AR_emergencydepts_en23.pdf</a>.</li>
+          <li>Office of the Privacy Commissioner of Canada. Wearable devices and your privacy. <a href="https://www.priv.gc.ca/en/privacy-topics/technology/mobile-and-digital-devices/digital-devices/02_05_d_73_wd/" target="_blank" rel="noopener noreferrer">https://www.priv.gc.ca/en/privacy-topics/technology/mobile-and-digital-devices/digital-devices/02_05_d_73_wd/</a>.</li>
+          <li>Ontario Health. Annual report 2024-25. <a href="https://ontariohealth.ca/content/dam/ontariohealth/documents/annual-report-2024-25.pdf" target="_blank" rel="noopener noreferrer">https://ontariohealth.ca/content/dam/ontariohealth/documents/annual-report-2024-25.pdf</a>.</li>
+        </ul>
+      </article>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/animations.js?v=20260512h"></script>
+  <script src="js/interactions.js?v=20260512i"></script>
+</body>
+</html>

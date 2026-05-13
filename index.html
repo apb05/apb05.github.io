@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Alex Biondi — Systems Builder & Health-Tech Engineer</title>
+  <meta name="description" content="Alex Biondi — Founder at Universlly.io, software developer, web developer and Digital Communications student at Humber Polytechnic.">
+  <meta name="author" content="Alex Biondi">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Alex Biondi — Systems Builder">
+  <meta property="og:description" content="Building software systems at the edge of health and technology.">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/design-system.css?v=20260512m">
+  <link rel="stylesheet" href="css/environment.css?v=20260512n">
+  <link rel="stylesheet" href="css/layout.css?v=20260512m">
+  <link rel="stylesheet" href="css/components.css?v=20260512p">
+</head>
+<body>
+
+  <!-- ==========================================
+       ENVIRONMENT LAYERS
+       ========================================== -->
+
+  <!-- Grid Overlay -->
+  <div class="env-grid" aria-hidden="true"></div>
+
+  <!-- Noise Texture -->
+  <div class="env-noise" aria-hidden="true">
+    <svg width="100%" height="100%">
+      <filter id="noise-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noise-filter)"/>
+    </svg>
+  </div>
+
+  <!-- Ambient Gradients -->
+  <div class="env-ambient" aria-hidden="true">
+    <div class="env-ambient__orb env-ambient__orb--1"></div>
+    <div class="env-ambient__orb env-ambient__orb--2"></div>
+    <div class="env-ambient__orb env-ambient__orb--3"></div>
+  </div>
+
+  <!-- Cursor Gradient -->
+  <div class="env-cursor" id="cursor-gradient" aria-hidden="true"></div>
+
+  <!-- Vignette -->
+  <div class="env-vignette" aria-hidden="true"></div>
+
+
+  <!-- ==========================================
+       LOADER
+       ========================================== -->
+  <div class="loader" id="loader">
+    <div class="loader__mark">Alex Biondi</div>
+    <div class="loader__line"></div>
+  </div>
+
+
+  <!-- ==========================================
+       NAVIGATION
+       ========================================== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo"><span>//</span> Alex Biondi</a>
+
+      <div class="nav__links">
+        <a href="#about" class="nav__link">About</a>
+        <a href="projects.html" class="nav__link">Projects</a>
+        <a href="#growth" class="nav__link">Growth</a>
+        <a href="#log" class="nav__link">Experience</a>
+        <a href="vision.html" class="nav__link">Vision</a>
+        <a href="#contact" class="nav__link">Contact</a>
+      </div>
+
+      <button class="nav__menu-btn" aria-label="Toggle menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <div class="nav__mobile">
+      <a href="#about">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="#growth">Growth</a>
+      <a href="#log">Experience</a>
+      <a href="vision.html">Vision</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+
+  <!-- ==========================================
+       SECTION 1 — HERO
+       ========================================== -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero__content">
+        <div class="hero__photo-wrap">
+          <img class="hero__photo" src="compressed_F990B7DC-1F64-4A20-A199-9FB4F2C249DD-preview.jpg" alt="Portrait of Alex Biondi">
+        </div>
+
+        <h1 class="hero__title">
+          <span class="hero__title-line">
+            <span class="hero__title-word">Building software where health, data and systems meet.</span>
+          </span>
+        </h1>
+
+        <div class="hero__text-tile">
+          <p class="hero__subtitle">
+            I’m Alex Biondi, a Digital Communications student at Humber Polytechnic building toward software engineering through technical courses, hands-on projects and product development.
+          </p>
+          <p class="hero__subtitle">
+            My long-term goal is to use wearable technology to advance health care and life longevity by giving people access to, control over and a deeper understanding of their own health data. I’m interested in building systems that help people act earlier, support prevention and give providers better context before care decisions are made.
+          </p>
+          <p class="hero__subtitle">
+            I’m also building Universlly.io, an AI-powered marketing budget optimization platform. Although it operates in marketing, the deeper work is helping me develop the same practical skills I want to bring into health-tech: data integration, AI decision support, user dashboards, automation, product design and trust-based systems.
+          </p>
+        </div>
+      </div>
+
+      <div class="hero__scroll">
+        <div class="hero__scroll-line"></div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ==========================================
+       SECTION 2 — ABOUT / CURRENT FOCUS
+       ========================================== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label">About</div>
+        <h2 class="section__title">Current trajectory.</h2>
+      </div>
+
+      <div class="about-split">
+        <div class="about__narrative reveal">
+          <p>
+            I started in Kinesiology & Health Science at York University, where I studied human movement, physiology and how the body responds to stress, recovery and performance. That background shaped my interest in wearable health technology because it taught me to think about the body as a connected system with signals, patterns and feedback loops.
+          </p>
+          <p>
+            I transitioned to Digital Communications at Humber Polytechnic to build stronger skills in communication, user experience and product thinking. I want to use my communications background to make health technology more accessible by helping users understand complex information clearly. For health-tech to actually help people, data cannot just exist; it has to be explained in a way that feels trustworthy, usable and meaningful to patients.
+          </p>
+          <p>
+            Now, I’m building toward software engineering through technical courses, hands-on projects and product development. My long-term goal is to use wearable technology to advance health care and improve quality of life by giving people access to, control over and a deeper understanding of their own health data.
+          </p>
+        </div>
+
+        <div class="about__focus-list reveal">
+          <div class="focus-item">
+            <span class="focus-item__icon">◇</span>
+            <span>Software Engineering & Systems Design</span>
+          </div>
+          <div class="focus-item">
+            <span class="focus-item__icon">◇</span>
+            <span>AI-Powered Marketing Systems</span>
+          </div>
+          <div class="focus-item">
+            <span class="focus-item__icon">◇</span>
+            <span>Ad Platform Data Integration</span>
+          </div>
+          <div class="focus-item">
+            <span class="focus-item__icon">◇</span>
+            <span>Product Building & Interface Design</span>
+          </div>
+          <div class="focus-item">
+            <span class="focus-item__icon">◇</span>
+            <span>Budget Allocation & Optimization Logic</span>
+          </div>
+          <div class="focus-item">
+            <span class="focus-item__icon">◇</span>
+            <span>Technical Writing & Documentation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section__divider container">
+
+
+  <!-- ==========================================
+       SECTION 3 — FEATURED PROJECTS
+       ========================================== -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label">Projects</div>
+      </div>
+
+      <div class="reveal" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(300px,1fr)); gap: var(--space-8);">
+        <div>
+          <h2 class="section__title" style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">Projects</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+            I’m using hands-on projects to apply the technical foundation I’m building through courses and certifications. I’m organizing my work across software, data management, math, health science and health-tech so each project has a clear purpose, skill focus and connection to my long-term direction.
+          </p>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+            This helps me turn learning into proof of work while building toward wearable systems that make health data more accessible, understandable and useful.
+          </p>
+          <a href="projects.html" class="footer__link cta-glow" style="display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); border-radius:10px; padding:12px 18px; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:var(--tracking-wide);">
+            View Project Categories →
+          </a>
+        </div>
+        <div>
+          <h2 class="section__title" style="font-size: var(--text-2xl); margin-bottom: var(--space-4);">Courses/Certifications</h2>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+            Although I’m not studying engineering formally, I’m building the technical foundation on my own time through focused courses and certifications. I’m organizing my learning across software, data management, math, health science and health-tech so each course connects to a clear skill area.
+          </p>
+          <p style="color: var(--text-secondary); margin-bottom: var(--space-6);">
+            This helps me bridge my background in health and communications with the technical skills needed to eventually build wearable systems that make health data more accessible, understandable and useful.
+          </p>
+          <a href="courses.html" class="footer__link cta-glow" style="display:inline-flex; align-items:center; gap:8px; border:1px solid var(--border); border-radius:10px; padding:12px 18px; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:var(--tracking-wide);">
+            View Courses & Certifications →
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section__divider container">
+
+
+  <!-- ==========================================
+       SECTION 4 — TECHNICAL GROWTH
+       ========================================== -->
+  <section class="section" id="growth">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label">Technical Stack</div>
+        <h2 class="section__title">Tools & languages.</h2>
+      </div>
+
+      <div class="grid grid--3" style="gap: var(--space-6);">
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group__title">Languages</h4>
+          <div class="skill-group__items">
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--solid"></span>
+              HTML
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--solid"></span>
+              CSS
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--growing"></span>
+              JavaScript
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--growing"></span>
+              Python
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--learning"></span>
+              C
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group__title">Tools & Platforms</h4>
+          <div class="skill-group__items">
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--solid"></span>
+              VS Code
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--solid"></span>
+              Git / GitHub
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--growing"></span>
+              Supabase
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--growing"></span>
+              FastAPI
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--growing"></span>
+              GSAP
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h4 class="skill-group__title">AI-Assisted Dev</h4>
+          <div class="skill-group__items">
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--solid"></span>
+              Claude
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--solid"></span>
+              Gemini
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--solid"></span>
+              Codex
+            </div>
+            <div class="skill-item">
+              <span class="skill-item__level skill-item__level--solid"></span>
+              Antigravity
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Proficiency Legend -->
+      <div class="flex flex--gap-6 flex--wrap reveal" style="margin-top: var(--space-8);">
+        <div class="flex flex--center flex--gap-2">
+          <span class="skill-item__level skill-item__level--solid" style="display:inline-block;"></span>
+          <span class="mono">Working proficiency</span>
+        </div>
+        <div class="flex flex--center flex--gap-2">
+          <span class="skill-item__level skill-item__level--growing" style="display:inline-block;"></span>
+          <span class="mono">Actively building</span>
+        </div>
+        <div class="flex flex--center flex--gap-2">
+          <span class="skill-item__level skill-item__level--learning" style="display:inline-block;"></span>
+          <span class="mono">Learning</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section__divider container">
+
+
+  <!-- ==========================================
+       SECTION 5 — BUILD LOG
+       ========================================== -->
+  <section class="section" id="log">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label">Experience</div>
+        <h2 class="section__title">Milestones & progression.</h2>
+      </div>
+
+      <div style="max-width: 640px;">
+        <div class="timeline">
+
+          <div class="timeline__item timeline__item--current">
+            <div class="timeline__dot"></div>
+            <div class="timeline__date">Issued May 2026</div>
+            <div class="timeline__title">IBM — PY0220EN: Python for Data Science Project</div>
+            <div class="timeline__desc">License and certification in Python for data science project development.</div>
+          </div>
+
+          <div class="timeline__item timeline__item--current">
+            <div class="timeline__dot"></div>
+            <div class="timeline__date">Apr 2026 — Present</div>
+            <div class="timeline__title">Universlly.io — Active Development</div>
+            <div class="timeline__desc">Founder building an AI-powered marketing intelligence platform. Developing dashboard systems, capital allocation logic and multi-platform data workflows.</div>
+          </div>
+
+
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__date">Sep 2025 — Apr 2027</div>
+            <div class="timeline__title">Humber Polytechnic — Digital Communications</div>
+            <div class="timeline__desc">Shifted to Digital Communications to build technical, creative, and strategic communication skills. Studying web development, media production, and digital strategy.</div>
+          </div>
+
+
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__date">Jun 2023 — Present</div>
+            <div class="timeline__title">Watch Station International — Sales Associate</div>
+            <div class="timeline__desc">Customer-facing sales role at Fossil Group. Developed communication skills, client relationship management, and operational experience in a fast-paced retail environment.</div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__date">Jun 2023 — Apr 2025</div>
+            <div class="timeline__title">York University — Kinesiology & Health Science</div>
+            <div class="timeline__desc">Studied human physiology, biomechanics, and health systems. Developed analytical thinking and an understanding of how biological systems process feedback and adapt.</div>
+          </div>
+
+          <div class="timeline__item">
+            <div class="timeline__dot"></div>
+            <div class="timeline__date">Aug 2022 — Dec 2024</div>
+            <div class="timeline__title">Foot Locker — Sales Associate</div>
+            <div class="timeline__desc">Retail sales role focused on customer service, communication and team-driven sales performance.</div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section__divider container">
+
+
+  <!-- ==========================================
+       SECTION 6 — VISION / DIRECTION
+       ========================================== -->
+  <section class="section" id="vision">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label">Direction</div>
+      </div>
+
+      <div class="vision-block reveal">
+        <p class="vision-block__text">
+          I want to build health software that connects wearable data, clinical context and patient history so people can make better decisions before a condition becomes an emergency.
+        </p>
+        <p class="vision-block__sub">
+          Not as a finished vision, but as a direction. I’m building toward privacy-first health-tech systems that support symptom triage, risk flagging and patient-controlled records, so care can start earlier and with better information.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section__divider container">
+
+
+  <!-- ==========================================
+       SECTION 7 — CONTACT
+       ========================================== -->
+  <footer class="footer" id="contact">
+    <div class="container">
+      <div class="section__header reveal">
+        <div class="section__label">Contact</div>
+        <h2 class="section__title">Let's connect.</h2>
+      </div>
+
+      <div class="footer__inner reveal">
+        <div>
+          <div class="footer__label">Location</div>
+          <p style="color: var(--text-secondary); font-size: var(--text-sm);">Mississauga, ON</p>
+          <p style="color: var(--text-muted); font-size: var(--text-sm); margin-top: var(--space-1);">416 985 1501</p>
+        </div>
+
+        <div>
+          <div class="footer__label">Links</div>
+          <a href="mailto:alexpbiondi@gmail.com" class="footer__link">alexpbiondi@gmail.com</a>
+          <a href="https://www.linkedin.com/in/alex-biondi-32711a243" target="_blank" rel="noopener noreferrer" class="footer__link">LinkedIn →</a>
+          <a href="https://github.com/apb05" target="_blank" rel="noopener noreferrer" class="footer__link">GitHub →</a>
+        </div>
+
+        <div>
+          <div class="footer__label">Status</div>
+          <div class="flex flex--gap-2" style="align-items: center;">
+            <div class="hero__status-dot" style="width:5px;height:5px;"></div>
+            <span style="color: var(--text-secondary); font-size: var(--text-sm);">Open to work: on-site, hybrid and remote</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer__copy">
+        © 2026 Alex Biondi. Built from scratch with intention.
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- ==========================================
+       SCRIPTS
+       ========================================== -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/animations.js?v=20260512h"></script>
+  <script src="js/interactions.js?v=20260512i"></script>
+
+</body>
+</html>

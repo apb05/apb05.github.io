@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Courses & Certifications — Alex Biondi</title>
+  <meta name="description" content="Courses and certifications categories for Alex Biondi.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/design-system.css?v=20260512m">
+  <link rel="stylesheet" href="css/environment.css?v=20260512n">
+  <link rel="stylesheet" href="css/layout.css?v=20260512m">
+  <link rel="stylesheet" href="css/components.css?v=20260512m">
+  <style>
+    .projects-page {
+      padding-top: calc(var(--space-32) + var(--space-10));
+      padding-bottom: var(--space-20);
+    }
+    .projects-wrap {
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .projects-intro {
+      color: var(--text-secondary);
+      margin-bottom: var(--space-8);
+      max-width: none;
+    }
+    .project-buttons {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+    .project-button {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      color: var(--text-primary);
+      background: rgba(255, 255, 255, 0.02);
+      text-align: center;
+      font-family: var(--font-mono);
+      letter-spacing: var(--tracking-wide);
+      text-transform: none;
+      transition: border-color var(--transition-fast), background var(--transition-fast);
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: var(--space-3);
+      text-decoration: none;
+    }
+    .project-button__title {
+      font-size: var(--text-3xl);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      color: var(--accent-green);
+      text-align: center;
+      line-height: 1.05;
+      margin-bottom: var(--space-4);
+    }
+    .project-button__sub {
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+      color: var(--text-secondary);
+      text-transform: none;
+      letter-spacing: normal;
+      text-align: center;
+      width: 100%;
+    }
+    .course-list {
+      width: 100%;
+      margin-top: var(--space-2);
+      display: grid;
+      gap: var(--space-3);
+      text-align: left;
+      font-family: var(--font-sans);
+    }
+    .course-item {
+      border-top: 1px solid var(--border);
+      padding-top: var(--space-3);
+    }
+    .course-item__title {
+      font-size: var(--text-sm);
+      color: var(--text-primary);
+      font-weight: var(--weight-medium);
+      margin-bottom: 2px;
+    }
+    .course-item__meta {
+      font-size: var(--text-xs);
+      color: var(--accent-green);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      margin-bottom: 4px;
+    }
+    .course-item__desc {
+      font-size: var(--text-xs);
+      color: var(--text-secondary);
+      line-height: var(--leading-normal);
+      margin: 0;
+    }
+    .project-button:hover {
+      border-color: var(--accent-green);
+      background: rgba(74, 222, 128, 0.08);
+      box-shadow: 0 0 18px rgba(74, 222, 128, 0.45);
+    }
+    .course-card-grid {
+      display: grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap: var(--space-5);
+    }
+    .course-card {
+      position: relative;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background:
+        radial-gradient(circle at 15% 20%, rgba(74, 222, 128, 0.15), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(96, 165, 250, 0.12), transparent 48%),
+        rgba(255, 255, 255, 0.02);
+      min-height: 260px;
+      padding: var(--space-6);
+      overflow: hidden;
+    }
+    .course-card__icon {
+      width: 48px;
+      height: 48px;
+      border: 1px solid rgba(74, 222, 128, 0.45);
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      color: var(--accent-green);
+      font-family: var(--font-mono);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-4);
+      background: rgba(74, 222, 128, 0.08);
+    }
+    .course-card__title {
+      font-size: var(--text-lg);
+      line-height: var(--leading-snug);
+      color: var(--text-primary);
+      margin: 0 0 var(--space-3) 0;
+      max-width: none;
+    }
+    .course-card__meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      margin-bottom: var(--space-4);
+    }
+    .course-chip {
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      letter-spacing: var(--tracking-wide);
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-full);
+      padding: 4px 10px;
+      color: var(--text-secondary);
+      background: rgba(255, 255, 255, 0.02);
+    }
+    .course-chip--status-progress {
+      border-color: rgba(103, 232, 249, 0.45);
+      color: #67E8F9;
+    }
+    .course-chip--status-complete {
+      border-color: rgba(74, 222, 128, 0.55);
+      color: var(--accent-green);
+    }
+    .course-card__desc {
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+      color: var(--text-secondary);
+      margin: 0;
+      max-width: none;
+    }
+    .category-block {
+      margin-top: var(--space-10);
+    }
+    .category-block__title {
+      font-size: var(--text-xl);
+      color: var(--accent-green);
+      margin-bottom: var(--space-4);
+    }
+    .course-empty {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: var(--space-5);
+      background: rgba(255, 255, 255, 0.02);
+      color: var(--text-secondary);
+      font-size: var(--text-sm);
+      line-height: var(--leading-relaxed);
+    }
+    @media (min-width: 768px) {
+      .project-buttons {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+      .course-card-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+    .page-switch {
+      display: flex;
+      justify-content: center;
+      margin-top: var(--space-10);
+    }
+    .page-switch__link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 18px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+      letter-spacing: var(--tracking-wide);
+      color: var(--text-primary);
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast), color var(--transition-fast);
+    }
+    .page-switch__link:hover,
+    .page-switch__link:focus-visible {
+      border-color: var(--accent-green);
+      color: var(--accent-green);
+      box-shadow: 0 0 18px rgba(74, 222, 128, 0.45);
+    }
+  </style>
+</head>
+<body>
+  <div class="env-grid" aria-hidden="true"></div>
+  <div class="env-noise" aria-hidden="true">
+    <svg width="100%" height="100%">
+      <filter id="noise-filter">
+        <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="4" stitchTiles="stitch"/>
+      </filter>
+      <rect width="100%" height="100%" filter="url(#noise-filter)"/>
+    </svg>
+  </div>
+  <div class="env-ambient" aria-hidden="true">
+    <div class="env-ambient__orb env-ambient__orb--1"></div>
+    <div class="env-ambient__orb env-ambient__orb--2"></div>
+    <div class="env-ambient__orb env-ambient__orb--3"></div>
+  </div>
+  <div class="env-cursor" id="cursor-gradient" aria-hidden="true"></div>
+  <div class="env-vignette" aria-hidden="true"></div>
+
+  <nav class="nav nav--scrolled" id="nav">
+    <div class="nav__inner">
+      <a href="index.html#hero" class="nav__logo"><span>//</span> Alex Biondi</a>
+      <div class="nav__links">
+        <a href="index.html#about" class="nav__link">About</a>
+        <a href="projects.html" class="nav__link">Projects</a>
+        <a href="index.html#growth" class="nav__link">Growth</a>
+        <a href="index.html#log" class="nav__link">Experience</a>
+        <a href="vision.html" class="nav__link">Vision</a>
+        <a href="index.html#contact" class="nav__link">Contact</a>
+      </div>
+      <button class="nav__menu-btn" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav__mobile">
+      <a href="index.html#about">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="index.html#growth">Growth</a>
+      <a href="index.html#log">Experience</a>
+      <a href="vision.html">Vision</a>
+      <a href="index.html#contact">Contact</a>
+    </div>
+  </nav>
+
+  <main class="projects-page">
+    <div class="container projects-wrap">
+      <section>
+        <div class="section__header reveal">
+          <div class="section__label">Courses & Certifications</div>
+          <h1 class="section__title">What I’m doing with my learning.</h1>
+        </div>
+
+        <p class="projects-intro reveal">
+          I’m not studying engineering formally, so I’m building this technical foundation on my own time through focused courses and certifications. I organise each one by primary skill area so the connection to my long-term wearable health-tech direction is clear.
+        </p>
+
+        <div class="project-buttons reveal">
+          <a class="project-button" href="courses-software.html">
+            <span class="project-button__title">Software</span>
+            <span class="project-button__sub">Software courses and certifications give me structured technical depth I can apply in real builds. That foundation supports my long-term vision of building wearable systems that people can trust in real health decisions.</span>
+          </a>
+          <a class="project-button" href="courses-health.html">
+            <span class="project-button__title">Health</span>
+            <span class="project-button__sub">Health-related learning keeps my technical direction aligned with patient reality. This directly supports my goal of creating tools that improve prevention and earlier intervention.</span>
+          </a>
+          <a class="project-button" href="courses-math.html">
+            <span class="project-button__title">Math</span>
+            <span class="project-button__sub">Math coursework strengthens the analytical backbone behind decision-support systems. Those capabilities are critical to my vision because wearable health-tech must produce dependable insights, not just visual output.</span>
+          </a>
+          <a class="project-button" href="courses-healthtech.html">
+            <span class="project-button__title">Health-Tech</span>
+            <span class="project-button__sub">Health-tech certifications help me connect software and data with privacy, interoperability and patient usability standards. This is central to my long-term path toward wearable tools that make health data more accessible, understandable and useful.</span>
+          </a>
+        </div>
+
+        <div class="page-switch reveal">
+          <a class="page-switch__link" href="projects.html">Go To Projects →</a>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="js/animations.js?v=20260512h"></script>
+  <script src="js/interactions.js?v=20260512i"></script>
+</body>
+</html>
